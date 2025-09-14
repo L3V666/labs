@@ -13,7 +13,7 @@ for i in range(0, len(data), tau):
     t = np.append(t, np.sum(data[i:i + tau]))
 
 
-pd.DataFrame(t.reshape(5, 10)).to_csv('t80.csv', index=False, encoding='utf-8-sig')
+#pd.DataFrame(t.reshape(5, 10)).to_csv('t80.csv', index=False, encoding='utf-8-sig')
 
 
 def w_n(n, t):
@@ -47,6 +47,12 @@ print(f'sigma_avg_n {sigma_avg_n}')
 j = avg_n / tau
 print(f'j {j}')
 
-plt.savefig('80.png')
+print(f'1_sigma_n {(np.count_nonzero(np.abs(t - avg_n) <= sigma_n)) / len(t)}')
+print(f'2_sigma_n {(np.count_nonzero(np.abs(t - avg_n) <= 2 * sigma_n)) / len(t)}')
+print(f'3_sigma_n {(np.count_nonzero(np.abs(t - avg_n) <= 3 * sigma_n)) / len(t)}')
 
-plt.show()
+print(sigma_n, np.sqrt(avg_n))
+
+#plt.savefig('80.png')
+
+#plt.show()
