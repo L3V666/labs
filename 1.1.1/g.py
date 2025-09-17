@@ -35,8 +35,9 @@ plt.plot(x50, y50, label="l=50cm")
 
 plt.legend()
 
-plt.grid(True, which='major', linestyle='-', linewidth=1, alpha=1, color='gray')
-plt.grid(True, which='minor', linestyle=':', linewidth=0.5, alpha=0.5, color='lightgray')
+plt.minorticks_on()
+plt.grid(which='major', linestyle='-', linewidth=1.2, alpha=0.8, color='black')
+plt.grid(which='minor', linestyle=':', linewidth=0.7, alpha=0.3, color='gray')
 
 plt.xlabel("I, mA")
 plt.ylabel("V, mV")
