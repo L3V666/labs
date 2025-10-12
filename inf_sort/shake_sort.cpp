@@ -19,12 +19,12 @@ double get_time() {
 
 signed main() {
     ofstream f("shake_sort_csv.csv", ios::out);
-    for (int n = 100; n <= 50000; n += 100) {
+    for (int n = 4000; n <= 100000; n += 4000) {
         int a[n];
         for (int i = 0; i < n; i++) {
             a[i] = rand_uns(0, 999);
         }
-        auto s = get_time();
+        auto s1 = get_time();
         int l = 0;
         int r = n - 1;
         while (l <= r) {
@@ -41,7 +41,52 @@ signed main() {
             }
             r--;
         }
-        auto e = get_time();
-        f << n << "," << e - s << endl;
+        auto e1 = get_time();
+
+        for (int i = 0; i < n; i++) {
+            a[i] = i;
+        }
+        auto s2 = get_time();
+        l = 0;
+        r = n - 1;
+        while (l <= r) {
+            for (int i = r; i > l; i--) {
+                if (a[i - 1] > a[i]) {
+                    swap(a[i - 1], a[i]);
+                }
+            }
+            l++;
+            for (int i = l; i < r; i++) {
+                if (a[i] > a[i + 1]) {
+                    swap(a[i], a[i + 1]);
+                }
+            }
+            r--;
+        }
+        auto e2 = get_time();
+
+        for (int i = 0; i < n; i++) {
+            a[i] = n - i;
+        }
+        auto s3 = get_time();
+        l = 0;
+        r = n - 1;
+        while (l <= r) {
+            for (int i = r; i > l; i--) {
+                if (a[i - 1] > a[i]) {
+                    swap(a[i - 1], a[i]);
+                }
+            }
+            l++;
+            for (int i = l; i < r; i++) {
+                if (a[i] > a[i + 1]) {
+                    swap(a[i], a[i + 1]);
+                }
+            }
+            r--;
+        }
+        auto e3 = get_time();
+
+        f << n << "," << e1 - s1 << "," << e2 - s2 << "," << e3 - s3 << endl;
     }
 }

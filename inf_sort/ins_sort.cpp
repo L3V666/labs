@@ -19,12 +19,12 @@ double get_time() {
 
 signed main() {
     ofstream f("ins_sort_csv.csv", ios::out);
-    for (int n = 100; n <= 50000; n += 100) {
+    for (int n = 4000; n <= 100000; n += 4000) {
         int a[n];
         for (int i = 0; i < n; i++) {
             a[i] = rand_uns(0, 999);
         }
-        auto s = get_time();
+        auto s1 = get_time();
         for (int i = 1; i < n; i++) {
             int x = a[i];
             int j = i;
@@ -34,7 +34,35 @@ signed main() {
             }
             a[j] = x;
         }
-        auto e = get_time();
-        f << n << "," << e - s << endl;
+        auto e1 = get_time();
+        for (int i = 0; i < n; i++) {
+            a[i] = i;
+        }
+        auto s2 = get_time();
+        for (int i = 1; i < n; i++) {
+            int x = a[i];
+            int j = i;
+            while (j > 0 && a[j - 1] > x) {
+                a[j] = a[j - 1];
+                j--;
+            }
+            a[j] = x;
+        }
+        auto e2 = get_time();
+        for (int i = 0; i < n; i++) {
+            a[i] = n - i;
+        }
+        auto s3 = get_time();
+        for (int i = 1; i < n; i++) {
+            int x = a[i];
+            int j = i;
+            while (j > 0 && a[j - 1] > x) {
+                a[j] = a[j - 1];
+                j--;
+            }
+            a[j] = x;
+        }
+        auto e3 = get_time();
+        f << n << "," << e1 - s1 << "," << e2 - s2 << "," << e3 - s3 << endl;
     }
 }

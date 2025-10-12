@@ -40,7 +40,7 @@ void quick_sort(int* a, int l, int r) {
 
 signed main() {
     ofstream f("quick_sort_csv.csv", ios::out);
-    for (int n = 100; n <= 50000; n += 100) {
+    for (int n = 4000; n <= 100000; n += 100) {
         int a[n];
         for (int i = 0; i < n; i++) {
             a[i] = rand_uns(0, 999);

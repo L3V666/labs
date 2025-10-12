@@ -18,8 +18,8 @@ double get_time() {
 }
 
 signed main() {
-    ofstream f("-O3.csv", ios::out);
-    for (int n = 100; n <= 50000; n += 100) {
+    ofstream f("-O1.csv", ios::out);
+    for (int n = 2000; n <= 50000; n += 2000) {
         int a[n];
         for (int i = 0; i < n; i++) {
             a[i] = rand_uns(0, 999);
