@@ -34,8 +34,6 @@ void merge(int* a, int l, int m, int r) {
         else
             a[k++] = R[j++];
     }
-
-    // Добавляем оставшиеся элементы
     while (i < n1)
         a[k++] = L[i++];
     while (j < n2)
