@@ -34,7 +34,7 @@ k = l[2]
 
 plt.plot(x, y)
 
-print(k ** -1)
+print(k ** -1, l[3] ** -1)
 
 plt.grid(True, which='major', linestyle='-', linewidth=0.5)
 plt.grid(True, which='minor', linestyle='-', linewidth=0.3)
