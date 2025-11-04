@@ -8,4 +8,6 @@ signed main() {
     for (float i = (1 << 24) - 1000; i < (1 << 24) + 2; i++) {
         cout << i << endl;
     }
+    //поменял
 }
+
