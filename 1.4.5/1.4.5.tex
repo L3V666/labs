@@ -1,0 +1,230 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Русский язык
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+% Картинки
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{wrapfig}
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+% Параметры страницы
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
+
+\usepackage{enumitem,xparse}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\begin{document}
+
+\newgeometry{left=2cm,right=2cm,top=2cm,bottom=1cm,bindingoffset=0cm}
+\begin{titlepage}
+    
+    \begin{center}
+        \vspace*{5cm}
+        \Huge Московский Физико-Технический Институт
+        \vspace*{2cm}\\
+        \LARGE Отчет по эксперименту
+        \\\vspace*{0.25cm}
+        
+        \noindent\rule{\textwidth}{1pt}
+        \vspace*{-0.25cm}
+        
+        \huge \textbf{1.4.5 \\ Изучение колебаний струны}
+        \noindent\rule{\textwidth}{1pt}
+
+        \vspace{6cm}
+        \vfill
+        \begin{flushright}
+            \begin{minipage}{.4\textwidth}
+            \Large Выполнил:\\ Студент 1 курса ФАКТ\\ Группа Б03-504 \\Подмосковнов Лев\\
+            \end{minipage}
+        \end{flushright}
+        
+        \vfill
+        \normalsize Долгопрудный \\2025
+        
+    \end{center}
+\end{titlepage}
+\restoregeometry
+
+\setcounter{page}{2}
+
+\section*{Теоритические сведения}
+
+Формула для расчёта скорости распространения волны в среде
+
+\[u=\sqrt{\frac{T}{\rho_l}}\]
+
+Формула для расчёта частоты n-ой гармоники
+
+\[\nu_n = \frac{n}{2L} \sqrt{\frac{T}{\rho_l}}\]
+
+\section*{Ход работы}
+
+\subsection*{Визуальное наблюдение стоячих волн}
+
+Скорость распространения волн: $u=137$ м/с
+
+\noindent Частота первой грамоники:$\nu_1=137$ Гц
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $\nu_1$, \text{Гц} & $\nu_2$, \text{Гц} & $\nu_3$, \text{Гц} & $\nu_4$, \text{Гц} 4 & $\nu_5$, \text{Гц} \\
+        \hline
+        137 & 274 & 411 & 549 & 682 \\
+        \hline
+    \end{tabular}
+    \caption*{Визуальное наблюдение стоячих волн}
+\end{table}
+
+\subsection*{Регистрация стоячих волн с помощью осциллографа}
+
+\begin{table}[h]
+    \begin{minipage}{0.2 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+        \hline
+        $n$ & $\nu_n$, \text{Гц} \\
+        \hline
+            1 & 136.99 \\ \hline
+            2 & 263.16 \\ \hline
+            3 & 434.78 \\ \hline
+            4 & 555.56 \\ \hline
+            5 & 689.66 \\ \hline
+            6 & 869.57 \\ \hline
+            7 & 1000 \\ \hline
+            8 & 1111.11 \\ \hline
+            9 & 1250 \\ \hline
+            10 & 1428.57 \\ \hline
+            \hline
+        \end{tabular}
+        \caption*{$m=1087,2$ г}
+    \end{minipage}
+    \begin{minipage}{0.19 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $n$ & $\nu_n$, \text{Гц} \\
+            \hline
+            1 & 166.67 \\ \hline
+            2 & 336.40 \\ \hline
+            3 & 504.70 \\ \hline
+            4 & 674.00 \\ \hline
+            5 & 843.80 \\ \hline
+            6 & 1012.20 \\ \hline
+            7 & 1183.50 \\ \hline
+            8 & 1354.90 \\ \hline
+            9 & 1526 \\ \hline
+            10 & 1698.50 \\ \hline
+            \hline
+        \end{tabular}
+        \caption*{$m=1574,6$ г}
+    \end{minipage}
+    \begin{minipage}{0.19 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $n$ & $\nu_n$, \text{Гц} \\
+            \hline
+            1 & 190 \\ \hline
+            2 & 381 \\ \hline
+            3 & 572.4 \\ \hline
+            4 & 763 \\ \hline
+            5 & 954.6 \\ \hline
+            6 & 1146 \\ \hline
+            7 & 1338.7 \\ \hline
+            8 & 1533 \\ \hline
+            9 & 1725 \\ \hline
+            10 & 1920 \\ \hline
+            \hline
+        \end{tabular}
+        \caption*{$m=2071,8$ г}
+    \end{minipage}
+    \begin{minipage}{0.19 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $n$ & $\nu_n$, \text{Гц} \\
+            \hline
+            1 & 209 \\ \hline
+            2 & 419 \\ \hline
+            3 & 629 \\ \hline
+            4 & 839 \\ \hline
+            5 & 1049 \\ \hline
+            6 & 1259 \\ \hline
+            7 & 1472 \\ \hline
+            8 & 1683 \\ \hline
+            9 & 1895 \\ \hline
+            10 & 2108 \\ \hline
+            \hline
+        \end{tabular}
+        \caption*{$m=2566,2$ г}
+    \end{minipage}
+    \begin{minipage}{0.19 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $n$ & $\nu_n$, \text{Гц} \\
+            \hline
+            1 & 229 \\ \hline
+            2 & 458 \\ \hline
+            3 & 688 \\ \hline
+            4 & 917 \\ \hline
+            5 & 1147 \\ \hline
+            6 & 1377 \\ \hline
+            7 & 1608 \\ \hline
+            8 & 1840 \\ \hline
+            9 & 2071 \\ \hline
+            10 & 2303 \\ \hline
+            \hline
+        \end{tabular}
+        \caption*{$m=3060,1$ г}
+    \end{minipage}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{1.png}
+    \caption*{Фигура Лиссажу с одним самопересечением}
+\end{figure}
+
+Благодаря высокой добротности струны, возможно возбуждение её колебаний при кратных частотах генератора, меньших, чем $\nu_1$. Для наблюдения явления переключим осциллограф в режим (X-Y) и настроим установку на наблюдение основной гармоники. Затем уменьшим частоту возбуждения в два раза, установивна генераторе $\nu=\frac{1}{2}\nu_1$. На экране осциллографа наблюдается фигура Лиссажу с одним самопересечением
+
+\section*{Обработка результатов}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{2.png}
+    \caption*{Зависимость $\nu_n$ и их аппроксимация линейной функцией по МНК.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{3.png}
+    \caption*{Зависимость $u^2$ от $T$}
+\end{figure}
+
+Из аппроксимации прямой получаем погонную плотность: $\rho_l=(582 \pm 4)$ мг/м. 
+
+\newpage
+
+\section*{Вывод}
+
+В работе были изучены поперечные стоячие волны на тонкой натянутой струне, были измерены собственные частоты её колебаний, измерена скорость распространения волн в струне и линейная плотность струны. Экспериментальные графики зависимостей $\nu_n(n)$ и $u^2(T)$ хорошо ложатся на аппроксимирующие прямые, но эти прямые не проходят через начало координат. Однако отклонение аппроксимирующих прямых от начала координат по оси ординат мало ($\sim 1\%$) по сравнению с значениями ординат экспериментальных точек. Отличие измеренного значения линейной плотности струны от указанного на установке составляет $6 \%$. Само значение $\rho$ измерено с достаточно высокой точностью $\varepsilon_{\rho} = 7 \cdot 10^{-3} \ \%$. Отличие $\rho$ от указанного на установке значения более, чем на погрешность, может быть связано с:
+\begin{itemize}
+\item[1) ] Неточностью определения собственных частот $\nu_n$ из-за возникновения нелинейных эффектов при резонансе, и, как следствие, неточностью в определении скорости распространения $u$ волны в струне.
+\item[2) ] Неучтением погрешностей измерения собственных частот.
+\item[3) ] Недостаточным количеством экспериментальных точек на графике $u^2(T)$, то есть недостаточным количеством опытов по измерению собственных частот струны в зависимости от силы натяжения нити $T$.
+\end{itemize}
+
+\end{document}

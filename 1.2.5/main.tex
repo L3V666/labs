@@ -1,0 +1,198 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Русский язык
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+% Картинки
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{wrapfig}
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+% Параметры страницы
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
+
+\usepackage{enumitem,xparse}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\begin{document}
+
+\newgeometry{left=2cm,right=2cm,top=2cm,bottom=1cm,bindingoffset=0cm}
+\begin{titlepage}
+    
+    \begin{center}
+        \vspace*{5cm}
+        \Huge Московский Физико-Технический Институт
+        \vspace*{2cm}\\
+        \LARGE Отчет по эксперименту
+        \\\vspace*{0.25cm}
+        
+        \noindent\rule{\textwidth}{1pt}
+        \vspace*{-0.25cm}
+        
+        \huge \textbf{1.2.5 \\ Исследование вынужденной регулярной прецессии гироскопа}
+        \noindent\rule{\textwidth}{1pt}
+
+        \vspace{6cm}
+        \vfill
+        \begin{flushright}
+            \begin{minipage}{.4\textwidth}
+            \Large Выполнил:\\ Студент 1 курса ФАКТ\\ Группа Б03-504 \\Подмосковнов Лев\\
+            \end{minipage}
+        \end{flushright}
+        
+        \vfill
+        \normalsize Долгопрудный \\2025
+        
+    \end{center}
+\end{titlepage}
+\restoregeometry
+
+\setcounter{page}{2}
+
+\section*{Теоритические сведения}
+
+\[\Omega=\frac{M}{I_z\omega_0\sin{\alpha}}=\frac{m_{\text{г}}gl_{\text{ц}}\sin{\alpha}}{I_z\omega_0\sin{\alpha}}=\frac{m_{\text{г}}gl_{\text{ц}}}{I_z\omega_0}\]
+
+\[\Omega=\frac{mgl}{I_z\omega_0}\]
+
+\[I_0=I_{\text{ц}}\frac{T_0^2}{T_{\text{ц}}^2}\]
+
+\section*{Ход работы}
+
+\begin{table}[h]
+    \begin{minipage}{0.36 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        $N$ & $t$, с & $\Omega$, $10^{-2}$c & $C$, $10^{-4}$c \\ 
+        \hline
+            1 & 136.2 & 4.61 & 15.38 \\ \hline
+            1 & 136.7 & 4.59 & 15.32 \\ \hline
+            1 & 136.4 & 4.60 & 15.35 \\ \hline
+            1 & 136.5 & 4.60 & 15.34 \\ \hline
+            1 & 136.5 & 4.60 & 15.34 \\ \hline
+            \hline
+        \end{tabular}
+        \caption*{$m=76$ г, \\ $M=9.02\cdot 10^{-2}$ Н*м}
+    \end{minipage}
+    \begin{minipage}{0.36 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+          \hline
+          $N$ & $t$, с & $\Omega$, $10^{-2}$c & $C$, $10^{-4}$c \\ 
+            \hline
+                2 & 220.0 & 5.71 & 9.52 \\ \hline
+                2 & 221.0 & 5.68 & 9.48 \\ \hline
+                2 & 221.5 & 5.67 & 9.46 \\ \hline
+                2 & 220.0 & 5.71 & 9.52 \\ \hline
+                2 & 220.0 & 5.71 & 9.52 \\ \hline
+            \hline
+        \end{tabular}
+        \caption*{$m=93$ г, \\ $M=1.1\cdot 10^{-1}$ Н*м}
+    \end{minipage}
+    \begin{minipage}{0.36 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            $N$ & $t$, с & $\Omega$, $10^{-2}$c & $C$, $10^{-4}$c \\ 
+            \hline
+                3 & 266.4 & 7.07 & 7.86 \\ \hline
+                3 & 266.3 & 7.07 & 7.86 \\ \hline
+                3 & 266.5 & 7.07 & 7.86 \\ \hline
+                3 & 266.2 & 7.08 & 7.87 \\ \hline
+                3 & 266.3 & 7.07 & 7.86 \\ \hline
+            \hline
+        \end{tabular}
+        \caption*{$m=116$ г, \\ $M=1.38\cdot 10^{-1}$ Н*м}
+    \end{minipage}
+    \begin{minipage}{0.36 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            $N$ & $t$, с & $\Omega$, $10^{-2}$c & $C$, $10^{-4}$c \\ 
+            \hline
+            3 & 224.1 & 8.41 & 9.35 \\ \hline
+            3 & 224.1 & 8.41 & 9.35 \\ \hline
+            3 & 224.2 & 8.40 & 9.34 \\ \hline
+            3 & 224.2 & 8.40 & 9.34 \\ \hline
+            3 & 224.1 & 8.41 & 9.35 \\ \hline
+            \hline
+        \end{tabular}
+        \caption*{$m=138$ г, \\ $M=1.64\cdot 10^{-1}$ Н*м}
+    \end{minipage}
+    \begin{minipage}{0.36 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            $N$ & $t$, с & $\Omega$, $10^{-2}$c & $C$, $10^{-4}$c \\ 
+            \hline
+            4 & 237.1 & 10.59 & 8.83 \\ \hline
+            4 & 237.2 & 10.59 & 8.83 \\ \hline
+            4 & 237.3 & 10.59 & 8.83 \\ \hline
+            4 & 237.2 & 10.59 & 8.83 \\ \hline
+            4 & 237.2 & 10.59 & 8.83 \\ \hline
+            \hline
+        \end{tabular}
+        \caption*{$m=174$ г, \\ $M=2.07\cdot 10^{-1}$ Н*м}
+    \end{minipage}
+\end{table}
+
+\clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{1.png}
+    \caption*{Зависимость $\Omega$ от $M$ и аппроксимация линейной функцией по МНК.}
+\end{figure}
+
+Момент инерции ротора равен: $I_0 = (0.86\pm0.01) \cdot 10^{-3}$ кг\cdot \text{м}^2
+
+Погрешность измерения $\Omega$: $\sigma_{\Omega}=0.03$
+
+Определить угловую ротора можно по формуле $\omega_0=\frac{1}{kI_0}$, где $k$ коэффициент наклона графика $\Omega(M)$. $\omega_0=2325$ c^{-1}. \text{Частоту можно найти по формуле} $\nu=\frac{\omega_0}{2\pi}=370$ Гц.
+
+\subsection*{Вычисление момента инерции}
+
+Для каждого груза момент силы трения будет разный:
+
+$m=76$ г, $M = 3.07 \cdot 10^{-3}$ Н \cdot \text{м}
+
+$m=93$ г, $M = 1.9 \cdot 10^{-3}$ Н \cdot \text{м}
+
+$m=116$ г, $M = 1.57 \cdot 10^{-3}$ Н \cdot \text{м}
+
+$m=138$ г, $M = 1.87 \cdot 10^{-3}$ Н \cdot \text{м}
+
+$m=174$ г, $M = 1.77 \cdot 10^{-3}$ Н \cdot \text{м}
+
+\subsection*{Измерение частоты вращения ротора с помощью фигуры Лиссажу}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{2.png}
+    \caption*{Фигура Лиссажу}
+\end{figure}
+
+Подобранная частота: $\nu=400\pm 0.5$ Гц
+
+\section*{Вывод}
+
+В данной работе были полученны частоты вращения ротора гироскопа двумя способами с разными погрешностями:
+\begin{itemize}
+    \item Через прецессию гироскопа: $\nu_{1} = 370 \text{ Гц}$
+    \item Через фигуры Лиссажу:      $\nu_{2} = 400 \text{  Гц }$
+\end{itemize}
+
+Сравнивая результаты приходим к выводу что при расчете 1 способом на значения оказывает влияние погрешность в отличии от способа 2 где используются более точные приборы.
+
+Также был оценен момент силы трения, действующий на ось гироскопа $ M \approx 10^{-3} \text{ } \text{Н} \cdot \text{м} $. Он оказался достаточно мал по сравнению с моментом силы тяжести груза, подвешенного на ось гироскопа, но достаточным для поворота гироскопа в сторону направления силы тяжести груза. Для его более точной оценки необходима более точная шкала определения отклонения гироскопа от начального уровня, которой, к сожалению, не было.
+
+\end{document}
