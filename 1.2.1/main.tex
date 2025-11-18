@@ -1,0 +1,172 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Русский язык
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+% Картинки
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{wrapfig}
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+% Параметры страницы
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
+
+\usepackage{enumitem,xparse}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\begin{document}
+
+\newgeometry{left=2cm,right=2cm,top=2cm,bottom=1cm,bindingoffset=0cm}
+\begin{titlepage}
+    
+    \begin{center}
+        \vspace*{5cm}
+        \Huge Московский Физико-Технический Институт
+        \vspace*{2cm}\\
+        \LARGE Отчет по эксперименту
+        \\\vspace*{0.25cm}
+        
+        \noindent\rule{\textwidth}{1pt}
+        \vspace*{-0.25cm}
+        
+        \huge \textbf{1.2.5 \\ Определение скорости полёта пули при помощи баллистического маятника}
+        \noindent\rule{\textwidth}{1pt}
+
+        \vspace{6cm}
+        \vfill
+        \begin{flushright}
+            \begin{minipage}{.4\textwidth}
+            \Large Выполнил:\\ Студент 1 курса ФАКТ\\ Группа Б03-504 \\Подмосковнов Лев\\
+            \end{minipage}
+        \end{flushright}
+        
+        \vfill
+        \normalsize Долгопрудный \\2025
+        
+    \end{center}
+\end{titlepage}
+\restoregeometry
+
+\setcounter{page}{2}
+
+\section*{Теоретичиские сведения}
+
+\section*{Ход работы}
+
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+№ пули & m, г \\ \hline
+1	& 0.512 \\ \hline
+2	& 0.507 \\ \hline
+3	& 0.506 \\ \hline
+4	& 0.509 \\ \hline
+5	& 0.504 \\ \hline
+6	& 0.502 \\ \hline
+7	& 0.504 \\ \hline
+8	& 0.510 \\ \hline
+9	& 0.511 \\ \hline
+10	& 0.504 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection*{Метод баллистического маятника, совершающего поступательное движение}
+
+Расстояние $L=222\pm0.5$ см
+
+\noindent Масса цилиндра $M=2925\pm5$ г
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+№ пули & $\Delta x, $ мм & $u, $ м/с \\ \hline
+1	& 9.3 & 111.23 \\ \hline
+2	& 9.8 & 118.37 \\ \hline
+3	& 9.5 & 114.97 \\ \hline
+4	& 9.5 & 114.29 \\ \hline
+5	& 9.6 & 116.64 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Средняя скорость $\overline{u}=115.1$ м/с. Погрешность $\varepsilon_u=1$ \%
+
+\subsection*{Вывод}
+
+В данной работе мы экспериментально определили скорость полета пули, как видно с высокой точностью. Отличия скоростей у разных пуль возникает из за во-первых их отличия по массе, а во вторых из-за параметров выстрела (аэродинамика и начальное положение в винтовке)
+
+\newpage
+
+\subsection*{Метод крутильного баллистического маятника}
+
+$r = 20,5\pm0.5$ см
+
+\noindent$R = 33,5\pm0.5$ см
+
+\noindent$d = 141\pm0.5$ см
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+№ пули & $T_1$, с\\ \hline
+1	& 6.66 \\ \hline
+2	& 6.71 \\ \hline
+3	& 6.70 \\ \hline
+4	& 6.69 \\ \hline
+5	& 6.67 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+№ измерения & $T_2$, с\\ \hline
+1	& 4.72 \\ \hline
+2	& 4.68 \\ \hline
+3	& 4.70 \\ \hline
+4	& 4.69 \\ \hline
+5	& 4.67 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Среднее значение: $\langle T_1 \rangle = 6.69$ с
+
+Среднее значение: $\langle T_2 \rangle = 4.69$ с
+
+Величина $\sqrt{kI} = (0.609 \pm 0.006) \tfrac{\text{кг}\cdot\text{м}^2}{c}$
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+№ пули & $\Delta x, $ мм & $u, $ м/с \\ \hline
+6	& 4 & 167.88 \\ \hline
+7	& 4.5 & 188.12\\ \hline
+8	& 4.2 & 173.51 \\ \hline
+9	& 4.4 & 181.42 \\ \hline
+10	& 4.4 & 183.94 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section*{Вывод}
+
+В данной работе мы экспериментально посчитали скорость полета пули. Отличия скоростей возникают из-за разных начальных прамаетров и аэродинамики.
+
+\end{document}
