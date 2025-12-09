@@ -1,0 +1,292 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Русский язык
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+% Картинки
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{wrapfig}
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+% Параметры страницы
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
+
+\usepackage{enumitem,xparse}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\newgeometry{left=2cm,right=2cm,top=2cm,bottom=1cm,bindingoffset=0cm}
+\begin{titlepage}
+    
+    \begin{center}
+        \vspace*{5cm}
+        \Huge Московский Физико-Технический Институт
+        \vspace*{2cm}\\
+        \LARGE Отчет по эксперименту
+        \\\vspace*{0.25cm}
+        
+        \noindent\rule{\textwidth}{1pt}
+        \vspace*{-0.25cm}
+        
+        \huge \textbf{1.3.1 \\Определение модуля Юнга на основе исследования деформаций растяжения и изгиба}
+        \noindent\rule{\textwidth}{1pt}
+
+
+       \vfill
+        \begin{flushright}
+            \begin{minipage}{.4\textwidth}
+            \Large Выполнил:\\ Студент 1 курса ФАКТ\\ Группа Б03-504 \\Подмосковнов Лев\\
+            \end{minipage}
+        \end{flushright}
+        
+        \vfill
+        \normalsize Долгопрудный \\2025
+        
+    \end{center}
+\end{titlepage}
+\restoregeometry
+
+\setcounter{page}{2}
+
+\section*{Определение модуля Юнга по измерениям изгиба балки}
+
+\includegraphics[scale=0.5]{1.jpg}
+
+\subsection*{Теоритические сведения}
+
+\[E=\frac{Pl^3}{4ab^3y_{max}}\]
+
+\newpage
+
+\subsection*{Результаты измерений и обработка данных}
+
+Расстояние между призмами: $l=(50.5 \pm 0.5)$ см
+
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+            \hline 
+            & Дерево 1 & Дерево 2 & Сталь \\ \hline
+            Ширина $a$, мм & 19.0 & 18.9 & 19.0 \\ \hline
+            Высота $b$, мм & 10.2 & 10.1 & 3.9 \\ \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\begin{table}[h]
+    \begin{minipage}{0.3 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $P$, Н & $y_{max}$, мм \\ \hline
+            0.00 & 0.00 \\ \hline
+            4.46 & 0.67 \\ \hline
+            9.11 & 1.35 \\ \hline
+            13.99 & 2.06  \\ \hline
+            18.9 & 2.77 \\ \hline
+            13.99 & 2.20 \\ \hline
+            9.11 & 1.41 \\ \hline
+            4.46 & 0.69 \\ \hline
+            0.00 & 0.02 \\ \hline
+        \end{tabular}
+        \caption*{Дерево-1}
+    \end{minipage}
+    \hfil
+    \begin{minipage}{0.3 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $P$, Н & $y_{max}$, мм \\ \hline
+            0.00 & 0.00 \\ \hline
+            4.46 & 0.65 \\ \hline
+            9.11 & 1.35 \\ \hline
+            13.99 & 2.07  \\ \hline
+            18.9 & 2.81 \\ \hline
+            13.99 & 2.11 \\ \hline
+            9.11 & 1.43 \\ \hline
+            4.46 & 0.74 \\ \hline
+            0.00 & 0.03 \\ \hline
+        \end{tabular}
+        \caption*{Перевёрнутое Дерево-1}
+    \end{minipage}
+    \begin{minipage}{0.3 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $P$, Н & $y_{max}$, мм \\ \hline
+            0.00 & 0.00 \\ \hline
+            4.46 & 0.40 \\ \hline
+            9.11 & 0.79 \\ \hline
+            13.99 & 1.06  \\ \hline
+            18.9 & 1.44 \\ \hline
+            13.99 & 1.04 \\ \hline
+            9.11 & 0.62 \\ \hline
+            4.46 & 0.30 \\ \hline
+            0.00 & 0.00 \\ \hline
+        \end{tabular}
+        \caption*{Дерево-2}
+    \end{minipage}
+    \begin{minipage}{0.3 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $P$, Н & $y_{max}$, мм \\ \hline
+            0.00 & 0.00 \\ \hline
+            4.46 & 0.41 \\ \hline
+            9.11 & 0.82 \\ \hline
+            13.99 & 1.25  \\ \hline
+            18.9 & 1.68 \\ \hline
+            13.99 & 1.28 \\ \hline
+            9.11 & 0.95 \\ \hline
+            4.46 & 0.44 \\ \hline
+            0.00 & 0.05 \\ \hline
+        \end{tabular}
+        \caption*{Перевёрнутое Дерево-2}
+    \end{minipage}
+    \hfil
+    \begin{minipage}{0.37 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $P$, Н & $y_{max}$, мм \\ \hline
+            0.00 & 0.00 \\ \hline
+            4.46 & 0.66 \\ \hline
+            9.11 & 1.30 \\ \hline
+            13.99 & 1.97  \\ \hline
+            18.9 & 2.67 \\ \hline
+            13.99 & 1.98 \\ \hline
+            9.11 & 1.29 \\ \hline
+            4.46 & 0.65 \\ \hline
+            0.00 & 0.04 \\ \hline
+        \end{tabular}
+        \caption*{Сталь}
+    \end{minipage}
+    \begin{minipage}{0.23 \textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $P$, Н & $y_{max}$, мм \\ \hline
+            0.00 & 0.00 \\ \hline
+            4.46 & 0.59 \\ \hline
+            9.11 & 1.25 \\ \hline
+            13.99 & 1.93  \\ \hline
+            18.9 & 2.66 \\ \hline
+            13.99 & 1.97 \\ \hline
+            9.11 & 1.28 \\ \hline
+            4.46 & 0.64 \\ \hline
+            0.00 & 0.03 \\ \hline
+        \end{tabular}
+        \caption*{Перевёрнутая Сталь}
+    \end{minipage}
+\end{table}
+
+\vspace{4cm}
+
+Модуль Юнга с помощью коэффициента наклона можно найти так:
+
+\[E=\frac{kl^3}{4ab^3}\]
+
+\clearpage
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{дерево-1.png}
+    \caption*{График для Дерево-1}
+\end{figure}
+
+$k = 6.78 \pm 0.09$ Н/мм
+
+$E = (10.8 \pm 0.4)$ ГПа
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{дерево-2.png}
+    \caption*{График для Дерево-2}
+\end{figure}
+
+$k = 12.27 \pm 0.39$ Н/мм
+
+$E = (19.6 \pm 2.1)$ ГПа
+
+\clearpage
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{сталь.png}
+    \caption*{График для Сталь}
+\end{figure}
+
+$k = 7.14 \pm 0.05$ Н/мм
+
+$E = (203.6 \pm 1.1)$ ГПа
+
+\newpage
+
+\section*{Определение модуля Юнга по измерениям растяжения проволоки}
+
+\includegraphics[scale=0.5]{2.jpg}
+
+\subsection*{Теоритические сведения}
+
+\[F=\frac{ESr}{2lh}n\]
+
+\subsection*{Результаты измерений и обработка данных}
+
+\begin{table}[H]
+    \centering
+    \caption{Параметры прибора Лермантова}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $d_{\text{пр}}$, мм & $r$, мм & $l$, см & $h$, см & $\sigma_{\text{пр}}$, Н/мм$^2$\\ \hline
+    $0.46 \pm 0.01$            & $15 \pm 1$ & $177.6 \pm 0.5$  & $144.0\pm 0.5$   & 900\\ \hline
+    \end{tabular}
+\end{table}
+
+Предельная нагрузка на разрушение: $P=45.9$ Н
+
+\begin{table}[H]
+    \centering
+    \caption{Зависимость показаний шкалы от нагрузки}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $P$, Н & $n_1 \downarrow$, см & $n_1\uparrow$, см & $n_2 \downarrow$, см & $n_2 \uparrow$, см \\ \hline
+        4.9    & 13.5                 & 15.8              & 15.8                 & 15.2               \\ \hline
+        7.3    & 16.1                 & 18.7              & 18.9                 & 18.4               \\ \hline
+        9.7    & 18.6                 & 21.6              & 21.3                 & 21.3               \\ \hline
+        12.1   & 21.8                 & 23.9              & 24.2                 & 24.1               \\ \hline
+        14.5   & 24.4                 & 26.5              & 26.8                 & 26.8               \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{1.3.2 g.png}
+    \caption*{График зависимости $n$ от $F$}
+\end{figure}
+
+Модуль Юнга с помощью коэффициента наклона можно найти так:
+
+\[E=\frac{2lh}{kSr}\]
+
+\[E=(178 \pm 18) \text{ГПа}\]
+
+Исходя из табличных значений проволока сделана из стали.
+
+\section*{Вывод}
+
+В результате работы были исследованы упргуие деформации твердых тел. Подтверждена теоретическая модель, предсказывающая линейную зависимость. Получены значения модуля Юнга совпадают с табличными.
+
+Табличные значения взяты с сайта \href{https://en.wikipedia.org/wiki/Young%27s_modulus}{Wikipedia}.
+
+\end{document}
