@@ -1,0 +1,220 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Русский язык
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+% Картинки
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{wrapfig}
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+% Параметры страницы
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
+
+\usepackage{enumitem,xparse}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\newgeometry{left=2cm,right=2cm,top=2cm,bottom=1cm,bindingoffset=0cm}
+
+\begin{titlepage}
+\begin{center}
+
+    \vspace*{5cm}
+
+    {\Huge Московский Физико-Технический Институт}\\[2cm]
+
+    {\LARGE Отчёт по эксперименту}\\[0.25cm]
+
+    \noindent\rule{\textwidth}{1pt}
+    \vspace*{-0.25cm}
+
+    {\huge \textbf{1.2.3 \\ Определение моментов инерции твёрдых тел\\ с помощью трифилярного подвеса}}
+
+    \noindent\rule{\textwidth}{1pt}
+
+    \vfill
+
+\end{center}
+
+\begin{flushright}
+    \begin{minipage}{0.45\textwidth}
+        {\Large
+        Выполнил:\\
+        Студент 1 курса ФАКТ\\
+        Группа Б03-504\\
+        Подмосковнов Лев
+        }
+    \end{minipage}
+\end{flushright}
+
+\vfill
+
+\begin{center}
+    Долгопрудный\\2025
+\end{center}
+
+\end{titlepage}
+\restoregeometry
+
+\setcounter{page}{2}
+
+\section*{Теоритические сведения}
+
+\[I=\int r^2 dm\]
+Для цилиндра: $I=\frac{mr^2}{2}$
+
+\noindentДля кольца: $I=\frac{m{R_1^2+R_2^2}}{2}$
+
+\[I=kmT^2\]
+
+\[k=\frac{gRr}{4\pi^2z_0}\]
+
+\section*{Результаты измерений и обработка данных}
+
+\[R=(114.6 \pm 0.5)\text{мм}\]
+\[r=(30.5 \pm 0.3)\text{мм}\]
+\[m=(934.7 \pm 0.5)\text{г}\]
+\[z_0=(218.1  \pm 0.5)\text{см}\]
+\[k=(4.04 \cdot 10^{-4})\; \text{м}^2 / \text{c}^2\]
+
+\subsection*{Пустая платформа}
+
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+            \hline 
+            № опыта & Кол-во колебаний $n$ & $t$, c & $I,\; 10^{-3} \text{кг} \cdot \text{м}^2$\\ \hline
+            1 & 20 & 87.84 & 7.28 \\ \hline
+            2 & 20 & 88.01 & 7.31 \\ \hline
+            3 & 20 & 88.01 & 7.31 \\ \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+Радиус платформы: $R_0=(12.5 \pm 0.5)\text{см}$
+
+Теоритический момент инерции: $I = (7.30 \cdot 10^{-3}) \text{кг} \cdot \text{м}^2$ \
+
+\subsection*{Проверка аддитивности моментов инерции}
+
+Радиус диска: $R_0=8$ см
+
+\noindentМасса диска: $m=881.7$ г
+
+\noindentВнутренний радиус кольца: $R_1=8$ см
+
+\noindentВнешний радиус кольца: $R_2=8.4$ см
+
+\noindentМасса кольца: $m=772.1$ г
+
+\clearpage
+
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+            \hline 
+            № опыта & Кол-во колебаний $n$ & $t$, c & $I,\; 10^{-3} \text{кг} \cdot \text{м}^2$\\ \hline
+            1 & 20 & 74.02 & 3.51 \\ \hline
+            2 & 20 & 74.21 & 3.55 \\ \hline
+            3 & 20 & 73.97 & 3.51 \\ \hline
+            4 & 20 & 74.28 & 3.57 \\ \hline
+            5 & 20 & 74.14 & 3.53 \\ \hline
+        \end{tabular}
+    \end{center}
+    \caption*{Диск}
+\end{table}
+
+Теоритический момент инерции: $I = (3.53 \cdot 10^{-3}) \text{кг} \cdot \text{м}^2$ \
+
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+            \hline 
+            № опыта & Кол-во колебаний $n$ & $t$, c & $I,\; 10^{-3} \text{кг} \cdot \text{м}^2$\\ \hline
+            1 & 20 & 83.63 & 4.48 \\ \hline
+            2 & 20 & 83.44 & 4.42 \\ \hline
+            3 & 20 & 83.66 & 4.56 \\ \hline
+            4 & 20 & 83.63 & 4.48 \\ \hline
+            5 & 20 & 83.58 & 4.33 \\ \hline
+        \end{tabular}
+    \end{center}
+    \caption*{Кольцо}
+\end{table}
+
+Теоритический момент инерции: $I = (4.48 \cdot 10^{-3}) \text{кг} \cdot \text{м}^2$ \
+
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+            \hline 
+            № опыта & Кол-во колебаний $n$ & $t$, c & $I,\; 10^{-3} \text{кг} \cdot \text{м}^2$\\ \hline
+            1 & 20 & 75.29 & 8.03 \\ \hline
+            2 & 20 & 75.28 & 8.03 \\ \hline
+            3 & 20 & 75.20 & 7.91 \\ \hline
+            4 & 20 & 75.35 & 8.06 \\ \hline
+            5 & 20 & 75.31 & 8.04 \\ \hline
+        \end{tabular}
+    \end{center}
+    \caption*{Кольцо+Диск}
+\end{table}
+
+Теоритический момент инерции: $I = (8.01 \cdot 10^{-3}) \text{кг} \cdot \text{м}^2$ \
+
+Как видно из таблицы, аддитивность моментов инерции соблюдается.
+
+\subsection*{Проверка теоремы Гюйгенса-Штейнера}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        № & $h$, мм & $T$, c & $I, 10^{-3} \text{ кг}\cdot\text{м}^2$ \\ \hline
+        1  & 0  & 3.094 & 1.58 \\ \hline
+        2  & 5  & 3.098 & 1.61 \\ \hline
+        3  & 10 & 3.116 & 1.71 \\ \hline
+        4  & 15 & 3.142 & 1.86 \\ \hline
+        5  & 20 & 3.188 & 2.12 \\ \hline
+        6  & 25 & 3.226 & 2.34 \\ \hline
+        7  & 30 & 3.294 & 2.75 \\ \hline
+        8  & 35 & 3.370 & 3.21 \\ \hline
+        9  & 40 & 3.444 & 3.66 \\ \hline
+        10 & 45 & 3.550 & 4.34 \\ \hline
+        11 & 50 & 3.634 & 4.88 \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{1.png}
+\end{figure}
+
+Найдем коэффициенты по МНК:
+		
+		\[I = b = (1.142 \pm 0.005) \cdot 10^{-3} \text{ кг}\cdot\text{м}^2\]
+		\[m = k = (1.336 \pm 0.006) \text{ кг}\]
+		
+		Как видно из эксперимента, формула Гюйгенса-Штейнера работает, а массы цилиндра, вычисленные по МНК, лежат в пределах допустимой погрешности.
+
+\clearpage
+
+\section*{Вывод}
+С помощью трифилярного подвеса можно определять момент инерции с достаточно большой точностью. Такая точность обусловлена малой погрешностью измерения времени и условиями, при которых колебания подвеса можно считать слабозатухающими.
+
+Мы экспериментально доказали аддитивность моментов инерции с помощью различных тел.
+
+Полученная зависимость $I(h^2)$ аппроксимируется линейной зависимостью, что подвтерждает формулу Гюйгенса-Штейнера ($I = I_c + Mh^2$, где $I$ -- момент инерции тела, $I_c$ --момент инерции тела относительно центра, $M$ -- масса тела, а $h$ -- расстояние между двумя осями, в нашем случае -- между осью вращения и половинками диска).
+		
+
+\end{document}
