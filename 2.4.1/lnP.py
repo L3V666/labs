@@ -52,6 +52,8 @@ plt.plot([min(ox), max(ox)], [oa + ob * min(ox), oa + ob * max(ox)], label='Ап
 
 plt.legend()
 
+plt.title("ln(P)(1/T)")
+
 plt.savefig('lnP.png')
 
 plt.show()

@@ -49,6 +49,6 @@ plt.legend()
 
 plt.savefig('P.png')
 
-print(oy[7])
+plt.title('P(T)')
 
 plt.show()
