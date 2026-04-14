@@ -14,24 +14,25 @@ def lsm(x, y):
     da, db = np.sqrt(np.diag(covariance))
     return xs, ys, a, b, da, db
 
+
 plt.figure(figsize=(16, 9))
 
-coord = np.array(pd.read_excel("11.ods", sheet_name=0))[:, 5:7]
+coord = np.array(pd.read_excel("2.1.1/data.ods", sheet_name=0))[:5, 4:6]
 plt.scatter(coord[:, 0], coord[:, 1], marker='+', s=100, color='red')
 x, y, a, b, da, db = lsm(coord[:12, 0], coord[:12, 1])
 plt.plot(x, y)
 print(a, b, da)
 
-plt.xlim(0, 400)
-plt.ylim(0, 0.00014)
+plt.xlim(0, 1)
+plt.ylim(0, 10)
 
-plt.ylabel('$\Delta$P, Па')
-plt.ylabel('Q, $м^3 / с$')
+plt.xlabel('N, Вт')
+plt.ylabel('$\Delta$T, К')
 
 plt.grid(True, which='major', linestyle='-', linewidth=0.5)
 plt.grid(True, which='minor', linestyle='-', linewidth=0.3)
 plt.minorticks_on()
 
-plt.savefig('1.png')
+plt.savefig('2.1.1/1.png')
 
 plt.show()

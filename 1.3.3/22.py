@@ -17,16 +17,16 @@ def lsm(x, y):
 plt.figure(figsize=(16, 9))
 
 coord = np.array(pd.read_excel("11.ods", sheet_name=3))
-plt.scatter(coord[:, 1], coord[:, 0], marker='+', s=100, color='red')
+plt.plot(coord[:, 1], coord[:, 0])
 #x, y, a, b, da, db = lsm(coord[:12, 0], coord[:12, 1])
 #plt.plot(x, y)
 #print(a, b, da)
 
-plt.xlim(0, 0.6)
-plt.ylim(0, 100)
+#plt.xlim(0, 0.6)
+plt.ylim(0, 230)
 
-plt.xlabel('l, м')
-plt.ylabel('P, Па')
+plt.xlabel('x, м')
+plt.ylabel('$\Delta$P/l, Па/м')
 
 plt.grid(True, which='major', linestyle='-', linewidth=0.5)
 plt.grid(True, which='minor', linestyle='-', linewidth=0.3)

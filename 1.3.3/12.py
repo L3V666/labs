@@ -22,7 +22,7 @@ x, y, a, b, da, db = lsm(coord[:6, 0], coord[:6, 1])
 plt.plot(x, y)
 print(a, b, da)
 
-plt.xlabel('P, Па')
+plt.ylabel('$\Delta$P, Па')
 plt.ylabel('Q, $м^3 / с$')
 
 plt.grid(True, which='major', linestyle='-', linewidth=0.5)
