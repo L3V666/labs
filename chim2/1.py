@@ -15,8 +15,6 @@ def lsm(x, y):
     return xs, ys, a, b, da, db
 
 
-plt.figure(figsize=(16, 9))
-
 coord = np.array([[0.01, 180], [0.02, 100], [0.03, 60], [0.04, 45], [0.05, 45]])
 
 coord[:, 1] = 1 / coord[:, 1]
@@ -39,7 +37,7 @@ plt.xlim(0, 0.06)
 plt.ylim(0, 0.06)
 
 plt.xlabel('$c$, л/моль')
-plt.ylabel('$v=1\tau$, $c^{-1}$')
+plt.ylabel('v=$τ^{-1}$, $c^{-1}$')
 
 plt.grid(True, which='major', linestyle='-', linewidth=0.5)
 plt.grid(True, which='minor', linestyle='-', linewidth=0.3)
