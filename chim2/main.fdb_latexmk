@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1776317713.73689 "/home/l3v/repo/labs/chim2/main.tex" "main.pdf" "main" 1776317714.99851 0
+["pdflatex"] 1776329869.29468 "/home/l3v/repo/labs/chim2/main.tex" "main.pdf" "main" 1776329870.5858 0
   "/home/l3v/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1774469470.82772 3304 6a543c07045572737981351171e0505e ""
   "/home/l3v/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/labx1728.tfm" 1774451823.44719 3312 d199be9bd555944e2403193d58a0256a ""
   "/home/l3v/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/labx2488.tfm" 1774451814.07199 3304 10c1a71cb294f8a8339c46823bcc15f2 ""
@@ -126,9 +126,9 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1775001600 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1776085438.55153 4547358 dea78b31c47846eb8f72ed74019fd353 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1776084791 7758589 b9affefa1b8aaf7a6c3cd732e80976e8 ""
-  "1.png" 1776317471.60133 59163 7fecd5bac4e1681cf21dfda040228dc2 ""
-  "main.aux" 1776317714.78231 1170 078637ba25602b247cd18c6624498de9 "pdflatex"
-  "main.out" 1776317714.46437 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "1.png" 1776329868.48346 59776 7fd9d579badb02d3ee16bcc8c2eb2408 ""
+  "main.aux" 1776329870.37747 1170 078637ba25602b247cd18c6624498de9 "pdflatex"
+  "main.out" 1776329870.05662 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.tex" 1776317713.35038 5662 98417efbc17ce64994b18c8f7d7ba003 ""
   (generated)
   "main.aux"

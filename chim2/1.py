@@ -21,7 +21,7 @@ coord = np.array([[0.01, 180], [0.02, 100], [0.03, 60], [0.04, 45], [0.05, 45]])
 
 coord[:, 1] = 1 / coord[:, 1]
 
-plt.scatter(coord[:, 0], coord[:, 1], marker='+', s=100, label='$26^\circ C$')
+plt.scatter(coord[:, 0], coord[:, 1], marker='+', s=100, label='$27^\circ C$')
 x, y, a, b, da, db = lsm(coord[:12, 0], coord[:12, 1])
 plt.plot(x, y)
 print(a, b, da)
@@ -30,7 +30,7 @@ coord = np.array([[0.01, 120], [0.02, 70], [0.03, 35], [0.04, 25], [0.05, 20]])
 
 coord[:, 1] = 1 / coord[:, 1]
 
-plt.scatter(coord[:, 0], coord[:, 1], marker='+', s=100, color='red', label='$26^\circ C$')
+plt.scatter(coord[:, 0], coord[:, 1], marker='^', s=100, color='red', label='$37^\circ C$')
 x, y, a, b, da, db = lsm(coord[:12, 0], coord[:12, 1])
 plt.plot(x, y, color='red')
 print(a, b, da)
