@@ -3,3 +3,8 @@
 .obsidian
 .vscode
 .clang-format
+.aux
+.fdb_latexmk
+.fls.log
+.out
+.gz
