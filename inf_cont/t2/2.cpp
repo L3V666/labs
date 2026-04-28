@@ -18,6 +18,8 @@ class subvector {
 
     void insert(unsigned int pos, int value);
 
+    void erase(unsigned int pos);
+
     int& operator[](unsigned int i);
 
     unsigned int size();
@@ -89,22 +91,18 @@ void subvector::pop_back() {
 }
 
 void subvector::insert(unsigned int pos, int value) {
-    if (pos > top) return;  // можно заменить на assert/throw
+    if (pos > top) return;
 
-    // если нет места — расширяем
     if (top == capacity) {
         int new_capacity = capacity * 2 + 1;
         int* t = new int[new_capacity];
 
-        // копируем до позиции вставки
         for (unsigned int i = 0; i < pos; ++i) {
             t[i] = mas[i];
         }
 
-        // вставляем новый элемент
         t[pos] = value;
 
-        // копируем хвост
         for (unsigned int i = pos; i < top; ++i) {
             t[i + 1] = mas[i];
         }
@@ -113,7 +111,6 @@ void subvector::insert(unsigned int pos, int value) {
         mas = t;
         capacity = new_capacity;
     } else {
-        // есть место — просто сдвигаем вправо
         for (unsigned int i = top; i > pos; --i) {
             mas[i] = mas[i - 1];
         }
@@ -121,6 +118,16 @@ void subvector::insert(unsigned int pos, int value) {
     }
 
     top++;
+}
+
+void subvector::erase(unsigned int pos) {
+    if (pos >= top) return;
+
+    for (unsigned int i = pos; i + 1 < top; ++i) {
+        mas[i] = mas[i + 1];
+    }
+
+    --top;
 }
 
 void subvector::clear() { top = 0; }
@@ -132,20 +139,17 @@ unsigned int subvector::size() { return top; }
 int main() {
     std::mt19937 gen(std::random_device{}());  // генератор
 
-    std::ofstream file("1.csv");
+    std::ofstream file("2.csv");
 
-    int k = 100;      // кол-во вставок элементов при одной длине массива
-    int m = 100;    // шаг
+    int k = 100;    // кол-во вставок элементов при одной длине массива
     int n = 10000;  // макс размер массива
     // std::cin >> n;
 
-    std::vector<long long> v;
+    std::vector<int> v;
     subvector sv;
 
-    v.push_back(8);
-    sv.push_back(8);
-
-    for (int i = 0; i < n; i++) {
+    for (int i = 1; i < n; i++) {
+        // добить вектор до нужного размера
         while (v.size() < i) v.push_back(8);
         while (sv.size() < i) sv.push_back(8);
 
@@ -160,11 +164,11 @@ int main() {
                                                     s - 1);  // диапазон [l, r]
             int x = dist(gen);
 
-            auto start = std::chrono::high_resolution_clock::now();
+            auto start = std::chrono::steady_clock::now();
 
-            t_v.insert(t_v.begin() + x, 8);
+            t_v.erase(t_v.begin() + x);
 
-            auto end = std::chrono::high_resolution_clock::now();
+            auto end = std::chrono::steady_clock::now();
 
             auto duration =
                 std::chrono::duration_cast<std::chrono::nanoseconds>(end -
@@ -184,11 +188,11 @@ int main() {
                                                     s - 1);  // диапазон [l, r]
             int x = dist(gen);
 
-            auto start = std::chrono::high_resolution_clock::now();
+            auto start = std::chrono::steady_clock::now();
 
-            t_sv.insert(x, 8);
+            t_sv.erase(x);
 
-            auto end = std::chrono::high_resolution_clock::now();
+            auto end = std::chrono::steady_clock::now();
 
             auto duration =
                 std::chrono::duration_cast<std::chrono::nanoseconds>(end -

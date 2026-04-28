@@ -5,6 +5,11 @@
 int main() {
     std::ofstream file("0.csv");
 
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file\n";
+        return 1;
+    }
+
     long long n = 10000;  // кол-во итераций
     // std::cin >> n;
 
