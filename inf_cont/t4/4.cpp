@@ -233,14 +233,14 @@ int subforwardlist::erase_where(unsigned int where) {
 }
 
 int main() {
-    std::ofstream file("3.csv");
+    std::ofstream file("4.csv");
 
     if (!file.is_open()) {
         std::cerr << "Ошибка открытия файла\n";
         return 1;
     }
 
-    const int k = 100;    // количество повторов для одного размера
+    const int k = 500;    // количество повторов для одного размера
     const int n = 10000;  // максимальный размер списка
 
     std::list<int> lst;
@@ -267,7 +267,7 @@ int main() {
 
             auto start = std::chrono::steady_clock::now();
 
-            t_lst.push_front(8);
+            t_lst.pop_front();
 
             auto end = std::chrono::steady_clock::now();
 
@@ -284,7 +284,7 @@ int main() {
 
             auto start = std::chrono::steady_clock::now();
 
-            t_flst.push_front(8);
+            t_flst.pop_front();
 
             auto end = std::chrono::steady_clock::now();
 
@@ -301,7 +301,7 @@ int main() {
 
             auto start = std::chrono::steady_clock::now();
 
-            t_slst.push_forward(8);
+            t_slst.pop_forward();
 
             auto end = std::chrono::steady_clock::now();
 
