@@ -1,0 +1,573 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Русский язык
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+% Картинки
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{wrapfig}
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+% Параметры страницы
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
+
+\usepackage{enumitem,xparse}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\newgeometry{left=2cm,right=2cm,top=2cm,bottom=1cm,bindingoffset=0cm}
+
+\begin{titlepage}
+    \begin{center}
+
+        \vspace*{5cm}
+
+        {\Huge Московский Физико-Технический Институт}\\[2cm]
+
+        {\LARGE Отчёт по эксперименту}\\[0.25cm]
+
+        \noindent\rule{\textwidth}{1pt}
+        \vspace*{-0.25cm}
+
+        {\huge \textbf{Электрохимия}}
+
+        \noindent\rule{\textwidth}{1pt}
+
+        \vfill
+
+    \end{center}
+
+    \begin{flushright}
+        \begin{minipage}{0.45\textwidth}
+            {\Large
+                Выполнил:\\
+                Студент 1 курса ФАКТ\\
+                Группа Б03-504\\
+                Подмосковнов Лев
+            }
+        \end{minipage}
+    \end{flushright}
+
+    \vfill
+
+    \begin{center}
+        Долгопрудный\\2026
+    \end{center}
+
+\end{titlepage}
+\restoregeometry
+
+\setcounter{page}{2}
+
+\subsection*{Цель работы}
+
+\begin{itemize}[label=--]
+    \item Подтвердить возможность протекания реакции теоретически
+    \item Определить потенциал отдельного электрона
+    \item Собрать аккумулятор, зарядить и измерить его ЭДС
+\end{itemize}
+
+\subsection*{Реактивы и оборудование}
+
+\begin{itemize}[label=--]
+    \item Реактивы
+    \item Вольтметр
+    \item Пробирки
+\end{itemize}
+
+\subsection*{Пункт 1}
+
+\[
+    \boxed{\text{Реакция 1}}
+\]
+
+\[
+    \mathrm{2KI + H_2SO_4 + H_2O_2 \rightarrow I_2 + K_2SO_4 + 2H_2O}
+\]
+
+\[
+    \text{ОВР:}\qquad
+    \begin{array}{rcl}
+        \mathrm{2I^{-1}}      & \rightarrow & \mathrm{I_2^0 + 2e^-} \quad \times 1 \\
+        \mathrm{O^{-1} + e^-} & \rightarrow & \mathrm{O^{-2}} \quad \times 2
+    \end{array}
+\]
+
+\[
+    \mathrm{H_2O_2 + 2I^- + 2H^+ \rightarrow I_2 + 2H_2O}
+\]
+
+\[
+    E^\circ = 1.776 - 0.536 = 1.240\ \mathrm{V}
+\]
+
+\[
+    \boxed{E^\circ > 0 \Rightarrow \text{реакция идёт}}
+\]
+
+\[
+    \text{Меняется цвет}
+\]
+
+\[
+    \boxed{\text{Реакция 2}}
+\]
+
+\[
+    \mathrm{2KMnO_4 + 5H_2O_2 + 3H_2SO_4
+        \rightarrow 2MnSO_4 + K_2SO_4 + 5O_2 + 8H_2O}
+\]
+
+\[
+    \text{ОВР:}\qquad
+    \begin{array}{rcl}
+        \mathrm{O^{-1}}         & \rightarrow & \mathrm{O^0 + e^-} \quad \times 10 \\
+        \mathrm{Mn^{+7} + 5e^-} & \rightarrow & \mathrm{Mn^{+2}} \quad \times 2
+    \end{array}
+\]
+
+\[
+    \mathrm{2MnO_4^- + 5H_2O_2 + 6H^+
+        \rightarrow 2Mn^{2+} + 5O_2 + 8H_2O}
+\]
+
+\[
+    E^\circ = 1.51 - 0.68 = 0.83\ \mathrm{V}
+\]
+
+\[
+    \boxed{E^\circ > 0 \Rightarrow \text{реакция идёт}}
+\]
+
+\[
+    \boxed{\text{Реакция 3}}
+\]
+
+\[
+    \mathrm{2KMnO_4 + 16HCl
+        \rightarrow 2MnCl_2 + 2KCl + 5Cl_2 + 8H_2O}
+\]
+
+\[
+    \text{ОВР:}\qquad
+    \begin{array}{rcl}
+        \mathrm{2Cl^{-1}}       & \rightarrow & \mathrm{Cl_2^0 + 2e^-} \quad \times 5 \\
+        \mathrm{Mn^{+7} + 5e^-} & \rightarrow & \mathrm{Mn^{+2}} \quad \times 2
+    \end{array}
+\]
+
+\[
+    \mathrm{2MnO_4^- + 10Cl^- + 16H^+
+        \rightarrow 2Mn^{2+} + 5Cl_2 + 8H_2O}
+\]
+
+\[
+    E^\circ = 1.51 - 1.36 = 0.15\ \mathrm{V}
+\]
+
+\[
+    \boxed{E^\circ > 0 \Rightarrow \text{реакция идёт}}
+\]
+
+\[
+    \text{Меняется цвет. Неприятный запах. Нагрев}
+\]
+
+\[
+    \boxed{\text{Реакция 4}}
+\]
+
+\[
+    \mathrm{2CrCl_3 + 2HNO_3 + 3H_2O
+        \rightarrow H_2Cr_2O_7 + 2NO + 6HCl}
+\]
+
+\[
+    \text{ОВР:}\qquad
+    \begin{array}{rcl}
+        \mathrm{Cr^{+3}}       & \rightarrow & \mathrm{Cr^{+6} + 3e^-} \quad \times 2 \\
+        \mathrm{N^{+5} + 3e^-} & \rightarrow & \mathrm{N^{+2}} \quad \times 2
+    \end{array}
+\]
+
+\[
+    \mathrm{2Cr^{3+} + 2NO_3^- + 3H_2O
+    \rightarrow Cr_2O_7^{2-} + 2NO + 6H^+}
+\]
+
+\[
+    E^\circ = 0.96 - 1.33 = -0.37\ \mathrm{V}
+\]
+
+\[
+    \boxed{E^\circ < 0 \Rightarrow \text{реакция не идёт}}
+\]
+
+\[
+    \boxed{\text{Реакция 5}}
+\]
+
+\[
+    \mathrm{K_2Cr_2O_7 + 6KI + 7H_2SO_4
+        \rightarrow Cr_2(SO_4)_3 + 4K_2SO_4 + 3I_2 + 7H_2O}
+\]
+
+\[
+    \text{ОВР:}\qquad
+    \begin{array}{rcl}
+        \mathrm{2I^{-1}}        & \rightarrow & \mathrm{I_2^0 + 2e^-} \quad \times 3 \\
+        \mathrm{Cr^{+6} + 3e^-} & \rightarrow & \mathrm{Cr^{+3}} \quad \times 2
+    \end{array}
+\]
+
+\[
+    \mathrm{Cr_2O_7^{2-} + 6I^- + 14H^+
+    \rightarrow 2Cr^{3+} + 3I_2 + 7H_2O}
+\]
+
+\[
+    E^\circ = 1.33 - 0.536 = 0.794\ \mathrm{V}
+\]
+
+\[
+    \boxed{E^\circ > 0 \Rightarrow \text{реакция идёт}}
+\]
+
+\[
+    \text{Меняется цвет. Нагрев}
+\]
+
+\newpage
+
+\subsection*{Пункт 2}
+
+\[
+    \boxed{\text{Гальванический элемент}}
+\]
+
+\[
+    \mathrm{(-)\ Ag \mid AgCl \mid KCl \parallel CuCl_2 \mid Cu\ (+)}
+\]
+
+\[
+    E_{\text{эксп}} = 0.259\ \mathrm{В}
+\]
+
+\[
+    \boxed{\text{Анод }(-)}
+\]
+
+\[
+    \mathrm{Ag + Cl^- \rightarrow AgCl + e^-}
+\]
+
+\[
+    \boxed{\text{Катод }(+)}
+\]
+
+\[
+    \mathrm{Cu^{2+} + 2e^- \rightarrow Cu}
+\]
+
+\[
+    \boxed{\text{Суммарное уравнение}}
+\]
+
+\[
+    \mathrm{2Ag + 2Cl^- + Cu^{2+} \rightarrow 2AgCl + Cu}
+\]
+
+\[
+    \boxed{\text{Расчёт ЭДС по уравнению Нернста}}
+\]
+
+\[
+    E = E^\circ - \frac{0.059}{n}\lg Q
+\]
+
+\[
+    n = 2
+\]
+
+\[
+    Q = 0.016
+\]
+
+\[
+    E^\circ = 0.213\ \mathrm{В}
+\]
+
+\[
+    E_{\text{теор}}
+    =
+    0.213 - \frac{0.059}{2}\lg(0.016)
+\]
+
+\[
+    \lg(0.016) \approx -1.796
+\]
+
+\[
+    E_{\text{теор}}
+    =
+    0.213 - 0.0295 \cdot (-1.796)
+\]
+
+\[
+    E_{\text{теор}}
+    =
+    0.213 + 0.053
+\]
+
+\[
+    \boxed{
+        E_{\text{теор}} \approx 0.266\ \mathrm{В}
+    }
+\]
+
+\[
+    \boxed{\text{Данные эксперимента}}
+\]
+
+\[
+    E_{\text{эксп}} = 0.259\ \mathrm{В}
+\]
+
+\[
+    \boxed{\text{Сравнение экспериментального и теоретического значения}}
+\]
+
+\[
+    \Delta E =
+    \left|E_{\text{теор}} - E_{\text{эксп}}\right|
+\]
+
+\[
+    \Delta E =
+    \left|0.266 - 0.259\right|
+    =
+    0.007\ \mathrm{В}
+\]
+
+\[
+    \varepsilon =
+    \frac{\Delta E}{E_{\text{теор}}}\cdot 100\%
+\]
+
+\[
+    \varepsilon =
+    \frac{0.007}{0.266}\cdot 100\%
+    \approx
+    2.6\%
+\]
+
+\[
+    \boxed{
+        E_{\text{эксп}} \approx E_{\text{теор}}
+    }
+\]
+
+\[
+    \boxed{
+        \varepsilon \approx 2.6\%
+    }
+\]
+
+\subsection*{Пункт 3}
+
+\[
+    \boxed{\text{а) Свинцовый аккумулятор}}
+\]
+
+\[
+    \mathrm{(-)\ Pb \mid H_2SO_4 \mid PbO_2\ (+)}
+\]
+
+\[
+    \boxed{\text{При зарядке}}
+\]
+
+\[
+    \text{Катод }(-):\qquad
+    \mathrm{PbSO_4 + 2e^- \rightarrow Pb + SO_4^{2-}}
+\]
+
+\[
+    \text{Анод }(+):\qquad
+    \mathrm{PbSO_4 + 2H_2O \rightarrow PbO_2 + SO_4^{2-} + 4H^+ + 2e^-}
+\]
+
+\[
+    \text{Суммарно:}\qquad
+    \mathrm{2PbSO_4 + 2H_2O \rightarrow Pb + PbO_2 + 2H_2SO_4}
+\]
+
+\[
+    \boxed{\text{При работе аккумулятора}}
+\]
+
+\[
+    \text{Анод }(-):\qquad
+    \mathrm{Pb + SO_4^{2-} \rightarrow PbSO_4 + 2e^-}
+\]
+
+\[
+    \text{Катод }(+):\qquad
+    \mathrm{PbO_2 + SO_4^{2-} + 4H^+ + 2e^- \rightarrow PbSO_4 + 2H_2O}
+\]
+
+\[
+    \text{Суммарно:}\qquad
+    \mathrm{Pb + PbO_2 + 2H_2SO_4 \rightarrow 2PbSO_4 + 2H_2O}
+\]
+
+\[
+    \boxed{\text{Уравнение Нернста}}
+\]
+
+\[
+    E = E^\circ - \frac{0.059}{n}\lg Q
+\]
+
+\[
+    n = 2
+\]
+
+\[
+    Q =
+    \frac{1}{[\mathrm{H^+}]^4[\mathrm{SO_4^{2-}}]^2}
+\]
+
+\[
+    E =
+    E^\circ
+    +
+    \frac{0.059}{2}
+    \lg
+    \left(
+    [\mathrm{H^+}]^4[\mathrm{SO_4^{2-}}]^2
+    \right)
+\]
+
+\[
+    E^\circ \approx 2.04\ \mathrm{В}
+\]
+
+\[
+    \boxed{\text{Данные эксперимента}}
+\]
+
+\[
+    E_{\text{зарядки}} = 1.9\ \mathrm{В}
+\]
+
+\[
+    E_{\text{эксп}} = 1.69\ \mathrm{В}
+\]
+
+\[
+    E_{\text{теор}} \approx 2.04\ \mathrm{В}
+\]
+
+\[
+    \boxed{\text{Сравнение экспериментального и теоретического значения}}
+\]
+
+\[
+    E_{\text{теор}} \approx 2.04\ \mathrm{В}
+\]
+
+\[
+    E_{\text{эксп}} = 1.69\ \mathrm{В}
+\]
+
+\[
+    \Delta E =
+    \left|E_{\text{теор}} - E_{\text{эксп}}\right|
+\]
+
+\[
+    \Delta E =
+    \left|2.04 - 1.69\right|
+    =
+    0.35\ \mathrm{В}
+\]
+
+\[
+    \varepsilon =
+    \frac{\Delta E}{E_{\text{теор}}}\cdot 100\%
+\]
+
+\[
+    \varepsilon =
+    \frac{0.35}{2.04}\cdot 100\%
+    \approx
+    17.2\%
+\]
+
+\[
+    \boxed{
+        \varepsilon \approx 17.2\%
+    }
+\]
+
+\[
+    \boxed{
+        E_{\text{эксп}} < E_{\text{теор}}
+    }
+\]
+
+\[
+    \boxed{
+        \text{Отклонение допустимо для учебного опыта.}
+    }
+\]
+
+\[
+    \boxed{
+        \text{Различие связано с неполной зарядкой аккумулятора и потерями в системе.}
+    }
+\]
+
+\section*{Вывод}
+
+\[
+    \text{В ходе работы были изучены окислительно-восстановительные реакции,}
+\]
+\[
+    \text{гальванический элемент и свинцовый аккумулятор.}
+\]
+
+\[
+    \text{Было установлено, что направление реакции зависит от значения ЭДС:}
+\]
+\[
+    E^\circ > 0 \Rightarrow \text{реакция идёт самопроизвольно.}
+\]
+
+\[
+    \text{Экспериментальные значения ЭДС в целом согласуются}
+\]
+\[
+    \text{с теоретическими расчётами.}
+\]
+
+\[
+    \text{Небольшие отклонения связаны с погрешностями опыта}
+\]
+\[
+    \text{и потерями в системе.}
+\]
+
+\end{document}
