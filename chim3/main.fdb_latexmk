@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1778101019.90234 "/home/l3v/repo/labs/chim3/main.tex" "main.pdf" "main" 1778101020.30571 0
+["pdflatex"] 1778137508.79925 "/home/l3v/repo/labs/chim3/main.tex" "main.pdf" "main" 1778137509.19751 0
   "/home/l3v/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1774469470.82772 3304 6a543c07045572737981351171e0505e ""
   "/home/l3v/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/labx1728.tfm" 1774451823.44719 3312 d199be9bd555944e2403193d58a0256a ""
   "/home/l3v/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/labx2488.tfm" 1774451814.07199 3304 10c1a71cb294f8a8339c46823bcc15f2 ""
@@ -10,7 +10,7 @@
   "/home/l3v/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/larm1728.tfm" 1774451818.89084 3252 92d08740ce00199d6cf9ff4aaada81d1 ""
   "/home/l3v/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/larm2074.tfm" 1774451809.55985 3264 03c2b9e4787a40d3b9c197c38b93b558 ""
   "/home/l3v/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/larm2488.tfm" 1774451804.72939 3264 102508a989355317d27912fb22a38399 ""
-  "/home/l3v/repo/labs/chim3/main.tex" 1778101019.87255 10427 0a6f0592ffff989106b88b89ed3e5e7a ""
+  "/home/l3v/repo/labs/chim3/main.tex" 1778137508.2204 10427 0a6f0592ffff989106b88b89ed3e5e7a ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc" 1136849721 3141 82d5616418ed8d5de703b3951bedecb4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -123,9 +123,9 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1775001600 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1776085438.55153 4547358 dea78b31c47846eb8f72ed74019fd353 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1776084791 7758589 b9affefa1b8aaf7a6c3cd732e80976e8 ""
-  "main.aux" 1778101020.2333 654 a260af413f18159439644862585c4030 "pdflatex"
-  "main.out" 1778101020.15917 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1778101019.87255 10427 0a6f0592ffff989106b88b89ed3e5e7a ""
+  "main.aux" 1778137509.1253 654 a260af413f18159439644862585c4030 "pdflatex"
+  "main.out" 1778137509.05363 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1778137508.2204 10427 0a6f0592ffff989106b88b89ed3e5e7a ""
   (generated)
   "main.aux"
   "main.log"

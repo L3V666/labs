@@ -1,8 +1,7 @@
 #include <chrono>
-#include <fstream>
 #include <forward_list>
+#include <fstream>
 #include <iostream>
-#include <iterator>
 #include <list>
 #include <utility>
 
@@ -16,6 +15,8 @@ class subforwardlist {
     };
 
     Node* head;
+    Node* tail;
+    int sz;
 
     void clear() {
         Node* cur = head;
@@ -27,25 +28,19 @@ class subforwardlist {
         }
 
         head = nullptr;
+        tail = nullptr;
+        sz = 0;
     }
 
     void copy_from(const subforwardlist& other) {
         head = nullptr;
+        tail = nullptr;
+        sz = 0;
 
         Node* cur = other.head;
-        Node* tail = nullptr;
 
         while (cur) {
-            Node* node = new Node(cur->data);
-
-            if (head == nullptr) {
-                head = node;
-                tail = node;
-            } else {
-                tail->next = node;
-                tail = node;
-            }
-
+            push_back(cur->data);
             cur = cur->next;
         }
     }
@@ -67,16 +62,17 @@ class subforwardlist {
 
     int pop_forward();
 
-    unsigned int size() const;
+    int size() const;
 
-    void push_where(unsigned int where, int d);
+    void push_where(int where, int d);
 
-    int erase_where(unsigned int where);
+    int erase_where(int where);
 };
 
-subforwardlist::subforwardlist() : head(nullptr) {}
+subforwardlist::subforwardlist() : head(nullptr), tail(nullptr), sz(0) {}
 
-subforwardlist::subforwardlist(const subforwardlist& other) : head(nullptr) {
+subforwardlist::subforwardlist(const subforwardlist& other)
+    : head(nullptr), tail(nullptr), sz(0) {
     copy_from(other);
 }
 
@@ -84,30 +80,27 @@ subforwardlist& subforwardlist::operator=(const subforwardlist& other) {
     if (this != &other) {
         subforwardlist temp(other);
         std::swap(head, temp.head);
+        std::swap(tail, temp.tail);
+        std::swap(sz, temp.sz);
     }
 
     return *this;
 }
 
-subforwardlist::~subforwardlist() {
-    clear();
-}
+subforwardlist::~subforwardlist() { clear(); }
 
 void subforwardlist::push_back(int d) {
     Node* node = new Node(d);
 
     if (head == nullptr) {
         head = node;
-        return;
+        tail = node;
+    } else {
+        tail->next = node;
+        tail = node;
     }
 
-    Node* cur = head;
-
-    while (cur->next) {
-        cur = cur->next;
-    }
-
-    cur->next = node;
+    sz++;
 }
 
 int subforwardlist::pop_back() {
@@ -115,25 +108,30 @@ int subforwardlist::pop_back() {
         return 0;
     }
 
-    if (head->next == nullptr) {
+    if (head == tail) {
         int val = head->data;
         delete head;
+
         head = nullptr;
+        tail = nullptr;
+        sz = 0;
+
         return val;
     }
 
     Node* cur = head;
-    Node* prev = nullptr;
 
-    while (cur->next) {
-        prev = cur;
+    while (cur->next != tail) {
         cur = cur->next;
     }
 
-    int val = cur->data;
+    int val = tail->data;
 
-    delete cur;
-    prev->next = nullptr;
+    delete tail;
+    tail = cur;
+    tail->next = nullptr;
+
+    sz--;
 
     return val;
 }
@@ -143,6 +141,12 @@ void subforwardlist::push_forward(int d) {
 
     node->next = head;
     head = node;
+
+    if (tail == nullptr) {
+        tail = node;
+    }
+
+    sz++;
 }
 
 int subforwardlist::pop_forward() {
@@ -153,81 +157,71 @@ int subforwardlist::pop_forward() {
     Node* node = head;
     int val = node->data;
 
-    head = node->next;
+    head = head->next;
+
+    if (head == nullptr) {
+        tail = nullptr;
+    }
 
     delete node;
+    sz--;
 
     return val;
 }
 
-unsigned int subforwardlist::size() const {
-    unsigned int cnt = 0;
-    Node* cur = head;
+int subforwardlist::size() const { return sz; }
 
-    while (cur) {
-        cnt++;
-        cur = cur->next;
-    }
-
-    return cnt;
-}
-
-void subforwardlist::push_where(unsigned int where, int d) {
-    if (where == 0 || head == nullptr) {
+void subforwardlist::push_where(int where, int d) {
+    if (where <= 0 || head == nullptr) {
         push_forward(d);
         return;
     }
 
-    if (where >= size()) {
+    if (where >= sz) {
         push_back(d);
         return;
     }
 
     Node* cur = head;
-    unsigned int i = 0;
 
-    while (cur->next && i + 1 < where) {
+    for (int i = 0; i + 1 < where; i++) {
         cur = cur->next;
-        i++;
     }
 
     Node* node = new Node(d);
 
     node->next = cur->next;
     cur->next = node;
+
+    sz++;
 }
 
-int subforwardlist::erase_where(unsigned int where) {
+int subforwardlist::erase_where(int where) {
     if (head == nullptr) {
         return 0;
     }
 
-    if (where == 0) {
+    if (where <= 0) {
         return pop_forward();
     }
 
-    if (where >= size() - 1) {
+    if (where >= sz - 1) {
         return pop_back();
     }
 
-    Node* cur = head;
-    Node* prev = nullptr;
-    unsigned int i = 0;
+    Node* prev = head;
 
-    while (cur && i < where) {
-        prev = cur;
-        cur = cur->next;
-        i++;
+    for (int i = 0; i + 1 < where; i++) {
+        prev = prev->next;
     }
 
-    if (!cur) {
-        return 0;
-    }
-
+    Node* cur = prev->next;
     int val = cur->data;
 
     prev->next = cur->next;
     delete cur;
+
+    sz--;
 
     return val;
 }
@@ -240,39 +234,48 @@ int main() {
         return 1;
     }
 
-    const int k = 100;    // количество повторов для одного размера
-    const int n = 10000;  // максимальный размер списка
+    const int k = 100;      // количество повторов для одного размера
+    const int n = 3000000;  // максимальный размер списка
+    int step = 10000;
 
     std::list<int> lst;
     std::forward_list<int> flst;
     subforwardlist slst;
 
-    for (int i = 1; i < n; i++) {
-        while (lst.size() < static_cast<std::size_t>(i)) {
+    int lst_size = 0;
+    int flst_size = 0;
+
+    file << "size,list,forward_list,subforwardlist\n";
+
+    for (int i = step; i < n; i += step) {
+        while (lst_size < i) {
             lst.push_front(8);
+            lst_size++;
         }
 
-        while (std::distance(flst.begin(), flst.end()) < i) {
+        while (flst_size < i) {
             flst.push_front(8);
+            flst_size++;
         }
 
-        while (slst.size() < static_cast<unsigned int>(i)) {
+        while (slst.size() < i) {
             slst.push_forward(8);
         }
 
         long long d_lst = 0;
 
         for (int j = 0; j < k; j++) {
-            auto t_lst = lst;
-
             auto start = std::chrono::steady_clock::now();
 
-            t_lst.push_front(8);
+            lst.push_front(8);
 
             auto end = std::chrono::steady_clock::now();
 
+            lst.pop_front();
+
             auto duration =
-                std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+                std::chrono::duration_cast<std::chrono::nanoseconds>(end -
+                                                                     start);
 
             d_lst += duration.count();
         }
@@ -280,16 +283,17 @@ int main() {
         long long d_flst = 0;
 
         for (int j = 0; j < k; j++) {
-            auto t_flst = flst;
-
             auto start = std::chrono::steady_clock::now();
 
-            t_flst.push_front(8);
+            flst.push_front(8);
 
             auto end = std::chrono::steady_clock::now();
 
+            flst.pop_front();
+
             auto duration =
-                std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+                std::chrono::duration_cast<std::chrono::nanoseconds>(end -
+                                                                     start);
 
             d_flst += duration.count();
         }
@@ -297,24 +301,27 @@ int main() {
         long long d_slst = 0;
 
         for (int j = 0; j < k; j++) {
-            auto t_slst = slst;
-
             auto start = std::chrono::steady_clock::now();
 
-            t_slst.push_forward(8);
+            slst.push_forward(8);
 
             auto end = std::chrono::steady_clock::now();
 
+            slst.pop_forward();
+
             auto duration =
-                std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+                std::chrono::duration_cast<std::chrono::nanoseconds>(end -
+                                                                     start);
 
             d_slst += duration.count();
         }
 
-        file << i << ","
-             << d_lst / k << ","
-             << d_flst / k << ","
-             << d_slst / k << "\n";
+        file << i << "," << d_lst / k << "," << d_flst / k << "," << d_slst / k
+             << "\n";
+
+        if (i % 100000 == 0) {
+            std::cout << i << std::endl;
+        }
     }
 
     file.close();
