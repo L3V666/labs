@@ -37,7 +37,7 @@ plt.plot(xx, a * xx,
          label=fr'МНК: $y={a:.3f}x$' + '\n'
                + fr'$R^2={r2:.4f}$')
 
-plt.xlabel(r'$\sqrt{\nu/\mathrm{MHz}}$')
+plt.xlabel(r'$\sqrt{\nu}$, МГц$^{1/2}$')
 plt.ylabel(r'$\alpha$, $10^{-3}$ м$^{-1}$')
 
 plt.xlim(0, 6.8)

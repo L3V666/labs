@@ -42,7 +42,7 @@ plt.plot(xx, a * xx,
          label=fr'МНК: $y={a:.5f}x$' + '\n'
                + fr'$R^2={r2:.5f}$')
 
-plt.xlabel(r'$(\nu/\mathrm{МГц})^{3/2}$')
+plt.xlabel(r'$\nu^{3/2}$, МГц$^{3/2}$')
 plt.ylabel(r'$\alpha k$, $10^{-3}$ м$^{-2}$')
 
 plt.xlim(0, xx.max())
